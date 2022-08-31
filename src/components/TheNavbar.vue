@@ -7,13 +7,13 @@
         <router-link to="/">Request</router-link>
       </li>
       <li>
-        <router-link to="/">Help</router-link>
+        <router-link to="/help">Help</router-link>
       </li>
       <li>
-        <router-link to="/">Messages</router-link>
+        <a href="#">Messages</a>
       </li>
       <li>
-        <router-link to="/auth">Exit</router-link>
+        <a href="#" @click.prevent="logout">Exit</a>
       </li>
     </ul>
   </nav>
