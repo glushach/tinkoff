@@ -1,14 +1,14 @@
 <template>
   <div class="container">
-    <div class="card">
-      <router-view />
-    </div>
+    <app-message/>
+    <router-view />
   </div>
 </template>
 
 <script>
+  import AppMessage from "../components/ui/AppMessage";
   export default {
-  
+    components: {AppMessage}
   }
 </script>
 
