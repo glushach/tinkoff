@@ -24,7 +24,7 @@ export default {
       try {
         const url = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${process.env.VUE_APP_FB_KEY}`
         const {data} = await axios.post(url, {...payload, returnSecureToken: true})
-        commit('setToken', 'TEST TOKEN')
+        commit('setToken', data.idToken)
         commit('clearMessage', null, {root: true})
       } catch (e) {
         dispatch('setMessage', {
