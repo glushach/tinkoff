@@ -1,7 +1,7 @@
 <template>
   <the-navbar></the-navbar>
   <div class="container with-nav pt-1">
-    <div class="card">
+    <div>
       <app-message/>
       <router-view/>
     </div>

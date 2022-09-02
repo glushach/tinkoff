@@ -21,7 +21,7 @@
         
         <td>
           <router-link v-slot="{navigate}" custom :to="{name: 'Request', params: {id: r.id}}">
-            <button class="btn primary" @click="navigate">Send</button>
+            <button class="btn" @click="navigate">Send</button>
           </router-link>
         </td>
       </tr>
