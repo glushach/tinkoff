@@ -57,6 +57,36 @@ export default {
           type: 'danger'
         }, {root: true})
       }
+    },
+    async remove({dispatch}, id) {
+      try {
+        const token = store.getters['auth/token']
+        await axios.delete(`/request/${id}.json?auth=${token}`)
+        dispatch('setMessage', {
+          value: 'Request was remove',
+          type: 'primary'
+        }, {root: true})
+      } catch (e) {
+        dispatch('setMessage', {
+          value: e.message,
+          type: 'danger'
+        }, {root: true})
+      }
+    },
+    async update({dispatch}, request) {
+      try {
+        const token = store.getters['auth/token']
+        await axios.put(`/request/${request.id}.json?auth=${token}`, request)
+        dispatch('setMessage', {
+          value: 'Request was update',
+          type: 'primary'
+        }, {root: true})
+      } catch (e) {
+        dispatch('setMessage', {
+          value: e.message,
+          type: 'danger'
+        }, {root: true})
+      }
     }
   },
   getters: {

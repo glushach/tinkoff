@@ -3,7 +3,7 @@
 </template>
 
 <script>
-  import {ref} from 'vue'
+  import {ref, watch} from 'vue'
   
   export default {
     props: {
@@ -31,6 +31,11 @@
         done: 'Completed',
         pending: 'Pending'
       }
+      
+      watch(props, val => {
+        classesMap.value = classesMap[val.type]
+        text.value = textMap[val.type]
+      })
       
       const className = ref(classesMap[props.type])
       const text = ref(classesMap[props.type])
