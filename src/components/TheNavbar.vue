@@ -10,7 +10,7 @@
         <router-link to="/help">Help</router-link>
       </li>
       <li>
-        <a href="#">Messages</a>
+        <a href="#" @click.prevent="open">Messages</a>
       </li>
       <li>
         <a href="#" @click.prevent="logout">Exit</a>
@@ -32,7 +32,8 @@
         logout: () => {
           store.commit('auth/logout')
           router.push('/auth')
-          }
+          },
+        open: () => store.commit('openSidebar')
         }
       }
     }
